@@ -99,6 +99,11 @@ jobs:
           cd friendlywrt-rk3328/friendlywrt/include
           sed -i 's/dnsmasq /dnsmasq-full default-settings luci /' target.mk
 
+      - name: Update Passwall
+        run: |
+          cd friendlywrt-rk3328/friendlywrt/
+          sed -i '/video.git/i src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
+          
       - name: Update Feeds
         run: |
           cd friendlywrt-rk3328/friendlywrt
