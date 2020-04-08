@@ -1,4 +1,4 @@
-name: NanoPi-R2S RK3328 OpenWrt 19.07 Build
+ame: NanoPi-R2S RK3328 OpenWrt 19.07 Build
 
 on:
   push:
@@ -9,7 +9,7 @@ jobs:
 
   build:
 
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
 
@@ -29,7 +29,6 @@ jobs:
           sudo apt-get -y purge dotnet* ghc* google* llvm* mysql* php* zulu* firefox hhvm
           sudo apt-get -y autoremove --purge          
           wget -O - https://raw.githubusercontent.com/friendlyarm/build-env-on-ubuntu-bionic/master/install.sh | bash
-
       #- name: Setup Debug Session
       #  uses: P3TERX/debugger-action@master
   
